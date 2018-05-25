@@ -1,5 +1,5 @@
 const companies = [
-  { name: "Company One", category: "Finance", start: "1981", end: "2000" },
+  { name: "Company One", category: "Finance", start: "2000  ", end: "2000" },
   { name: "Company Two", category: "Tecnology", start: "1991", end: "2000" },
   { name: "Company Three", category: "Retail", start: "1989", end: "2000" },
   { name: "Company Four", category: "Auto", start: "1999", end: "2000" },
@@ -95,3 +95,45 @@ console.log(agesTimeTwo);
 const agesMap = ages.map(age => Math.sqrt(age)).map(age => age * 2);
 
 console.log(agesMap);
+
+//Sort
+
+// sort companies by start year
+/* const sortedCompanies = companies.sort(function(company1, company2) {
+  if (company1.start > company2.start) {
+    return 1;
+  } else {
+    return -1;
+  }
+});  */
+
+const sortedCompanies = companies.sort((a, b) => (a.start > b.start ? 1 : -1));
+console.log(sortedCompanies);
+
+// const sortAges = ages.sort();
+// const sortAges = ages.sort((a, b) => a - b);
+const sortAges = ages.sort((a, b) => b - a);
+console.log(sortAges);
+
+// Reducer
+
+/* let ageSum = 0;
+for (let i = 0; i < ages.length; i++) {
+  ageSum += ages[i];
+} */
+
+/* const ageSum = ages.reduce(function(total, age) {
+  return total + age;
+}, 0); */
+
+const ageSum = ages.reduce((total, age) => total + age, 0);
+console.log(ageSum);
+
+// Get total year for all companies
+
+const totalYears = companies.reduce(
+  (total, company) => total + (company.end - company.start),
+  0
+);
+
+console.log(totalYears);
