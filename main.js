@@ -137,3 +137,18 @@ const totalYears = companies.reduce(
 );
 
 console.log(totalYears);
+
+/*const response = ages.reduce((max, age) => {
+  return max = age > max ? age : max; 
+}, 0);
+
+console.log(response);*/
+
+let array = [];
+const max = Math.max(...ages);
+
+for(let i = 0; i < max; i++) { array[i] = (i+1)  }
+
+let response = array.length - ages.length;
+
+console.log(response)
